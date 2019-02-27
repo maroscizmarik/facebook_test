@@ -13,4 +13,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'net.serenity-bdd:serenity-core:2.0.20'
+    compile 'net.serenity-bdd:serenity-cucumber:1.9.21'
+    compile 'org.assertj:assertj-core:3.9.1'
 }
