@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CommonSteps {
+public class CommonUtils {
 
     //these methods help the whole test flow to wait for particular elements and can be used wherever are needed
 
@@ -19,5 +19,10 @@ public class CommonSteps {
     public static void waitUntilClickable(By by, WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
+
+    public static void waitUntilElementDisappears(By by, WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
 }

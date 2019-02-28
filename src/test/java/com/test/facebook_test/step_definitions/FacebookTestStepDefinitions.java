@@ -8,22 +8,28 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FacebookTestStepDefinitions {
 
-    @Managed
     WebDriver browser;
 
     @Before
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver_x86_2.41.exe");
 
+        //chrome options serve to configure the driver
+        //i.e. turning of notification pop up, or maximize the window after opening
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("profile.default_content_setting_values.notifications", 2);
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setExperimentalOption("prefs", prefs);
         chromeOptions.setExperimentalOption("useAutomationExtension", false);
         chromeOptions.addArguments("--start-maximized");
         chromeOptions.setCapability("resolution", "1920x1080");

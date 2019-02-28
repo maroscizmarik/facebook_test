@@ -1,12 +1,18 @@
 # facebook_test
 
-Simple test focused on logging in to Facebook app, updating status, asserting the result and logging out.
+### Simple test focused on logging in to Facebook app, updating status, asserting the result and logging out.
 
-Please change the login credentials in LoginSteps class on line 16 and 17 for successful login.
+- Test uses Serenity BDD framework, Cucumber and Selenium Webdriver.
+- Test scenario is written with Gherkin reference.
+- Each gherkin statement is mapped to a method which performs some action (login, assert, udpate test, logout, ...) 
 
-Please change the expected name asserted in LoginSteps class on line 29 for successful assertion.
 
-If assertion of updated status fails, please keep in mind that page elements are hard to target on Facebook production environment. Please read the comments in ProfilePage class on line 16. 
+
+**Please change the login credentials in serenity.properties file for successful login.**
+
+**Please change the expected name and surname in serenity.properties file for successful assertion of login.**
+
+**You can change the text of status which you want to update in serenity.properties file as well.**
 
 Main method to run the test is in the TestFacebook class.
 
